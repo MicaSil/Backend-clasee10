@@ -1,0 +1,19 @@
+div 
+    h2(style="color:crimson;") Historial 
+    br
+    if DB_PRODUCTOS.length > 0
+        .table-responsive  
+            table.table.table-dark 
+                tr(style="color: yelow;")
+                    th Nombre 
+                    th Precio
+                    th Img
+                each producto  in DB_PRODUCTOS
+                    tr 
+                        td=producto.nombre
+                        td=producto.precio
+                        td
+                            img(width="50" src=producto.img, alt="")
+                    
+    else 
+        h3(class="alert alert-warning")= 'No se encontraaron productos'
